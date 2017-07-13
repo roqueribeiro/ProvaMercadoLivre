@@ -1,0 +1,360 @@
+body {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #EEE;
+    color: #333;
+    overflow: hidden;
+}
+
+.ml-preloader-overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.ml-preloader-effect {
+    position: absolute;
+    width: 250px;
+    height: 250px;
+}
+
+    .ml-preloader-effect::before {
+        content: " ";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #FFF;
+        border-radius: 50%;
+        animation-name: preloader-effect;
+        animation-duration: 1200ms;
+        animation-direction: normal;
+        animation-iteration-count: infinite;
+        animation-delay: 400ms;
+        opacity: 0;
+        transform: scale(0);
+        z-index: 1;
+    }
+
+    .ml-preloader-effect::after {
+        content: " ";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #FFF;
+        border-radius: 50%;
+        animation-name: preloader-effect;
+        animation-duration: 1200ms;
+        animation-direction: normal;
+        animation-iteration-count: infinite;
+        animation-delay: 800ms;
+        opacity: 0;
+        transform: scale(0);
+        z-index: 2;
+    }
+
+@-webkit-keyframes preloader-effect {
+    from {
+        opacity: 0.8;
+        transform: scale(0);
+    }
+
+    to {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+}
+
+.ml-navbar {
+    background: #FFE600;
+    border: none;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+    .ml-navbar .ml-navbar-logo img {
+        position: absolute;
+        height: 32px;
+        top: 10px;
+    }
+
+    .ml-navbar .input-group {
+        position: relative;
+        margin: 8px 0 0 65px;
+        padding: 0;
+    }
+
+        .ml-navbar .input-group .form-control:focus {
+            border-color: #AAA;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+.ui-autocomplete {
+    background: #FFF;
+    max-height: 180px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    white-space: nowrap;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+    border: none !important;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    font-size: 14px;
+    padding: 4px;
+    z-index: 9990;
+}
+
+    .ui-autocomplete .ui-menu-item {
+        padding: 0 !important;
+        margin: 0 !important;
+        border: none;
+    }
+
+    .ui-autocomplete .ui-menu-item-wrapper {
+        display: block;
+        padding: 6px 12px;
+    }
+
+    .ui-autocomplete .ui-state-active {
+        background: #2c77ba !important;
+        border: 1px solid #2c77ba !important;
+    }
+
+.ui-autocomplete-preloader-normal {
+    position: absolute;
+    right: 46px;
+    margin: 3px 0;
+    display: block;
+    font-size: 20px;
+    color: #CCC;
+    display: none;
+    z-index: 9991;
+}
+
+.ml-content {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+    .ml-content .breadcrumb {
+        background: none;
+        margin: 16px 0 16px 0;
+        padding: 0;
+        display: none;
+    }
+
+        .ml-content .breadcrumb a {
+            color: #999;
+            font-size: 14px;
+            text-transform: capitalize;
+        }
+
+        .ml-content .breadcrumb .active {
+            font-weight: bold;
+            color: #666;
+        }
+
+        .ml-content .breadcrumb > li + li:before {
+            color: #999;
+            content: "› ";
+            padding: 0 5px;
+        }
+
+    .ml-content .jumbotron {
+        background: #FFF;
+        padding: 16px;
+        border-radius: 4px;
+        display: none;
+    }
+
+        .ml-content .jumbotron .ml-item-list dl {
+            position: relative;
+            width: 100%;
+            height: 196px;
+            margin: 0 0 16px 0;
+            border-bottom: 1px #EEE solid;
+            cursor: pointer;
+        }
+
+            .ml-content .jumbotron .ml-item-list dl:last-child {
+                height: 180px;
+                margin: 0;
+                border-bottom: none !important;
+            }
+
+            .ml-content .jumbotron .ml-item-list dl dt {
+                float: left;
+                position: relative;
+                width: 180px;
+                height: 180px;
+                margin: 0 16px 0 0;
+                padding: 0;
+                overflow: hidden;
+                display: flex;
+                align-items: center;
+                border-radius: 4px;
+            }
+
+                .ml-content .jumbotron .ml-item-list dl dt img {
+                    position: absolute;
+                    width: 100%;
+                    border-radius: 4px;
+                    /*transition: 60ms ease-out;*/
+                }
+
+            .ml-content .jumbotron .ml-item-list dl dd {
+                padding: 16px;
+            }
+
+            .ml-content .jumbotron .ml-item-list dl .ml-item-price {
+                font-size: 24px;
+                color: #333;
+            }
+
+                .ml-content .jumbotron .ml-item-list dl .ml-item-price input {
+                    border: none;
+                    background: none;
+                    cursor: pointer;
+                }
+
+            .ml-content .jumbotron .ml-item-list dl .ml-item-description {
+                font-size: 18px;
+            }
+
+            .ml-content .jumbotron .ml-item-list dl .ml-item-address {
+                position: absolute;
+                top: 0;
+                right: 0;
+                font-size: 12px;
+                color: #666;
+            }
+
+            .ml-content .jumbotron .ml-item-list dl:hover > dt img {
+                opacity: 0.6;
+            }
+
+.ml-item-info {
+    padding: 16px;
+    margin: 0;
+}
+
+    .ml-item-info img {
+        max-width: 100%;
+    }
+
+    .ml-item-info > div {
+        margin: 0;
+        padding: 0;
+    }
+
+    .ml-item-info .ml-item-state {
+        font-size: 14px;
+        margin: 0 0 16px 0;
+        padding: 0;
+    }
+
+    .ml-item-info .ml-item-title {
+        font-size: 24px;
+        margin: 0;
+        padding: 0;
+    }
+
+    .ml-item-info input {
+        width: 100%;
+        margin: 32px 0;
+        border: none;
+        background: none;
+        cursor: default;
+        font-size: 46px;
+    }
+
+    .ml-item-info button {
+        width: 100%;
+        background: #3483FA;
+        padding: 10px 0;
+        border: none;
+    }
+
+.ml-item-details {
+    padding: 0 16px 16px 16px;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+    .ml-item-details > div {
+        margin: 0;
+        padding: 0;
+        text-align: center !important;
+        overflow: auto;
+    }
+
+    .ml-item-details h4 {
+        font-size: 28px;
+        margin: 32px 0 32px 0;
+        padding: 0;
+    }
+
+@media (max-width: 480px) {
+
+    .ui-autocomplete {
+        width: calc(100% - 150px);
+        white-space: normal;
+    }
+
+    .ml-navbar .input-group {
+        left: 0px;
+    }
+
+    .ml-content .container {
+        padding: 0;
+    }
+
+    .ml-content .jumbotron {
+        border-radius: 0;
+        margin: 0;
+    }
+
+    .ml-content .breadcrumb {
+        padding: 0 15px 0 15px;
+    }
+
+    .ml-content .jumbotron .ml-item-list dl {
+        width: 100%;
+        height: auto;
+    }
+
+        .ml-content .jumbotron .ml-item-list dl:last-child {
+            width: 100%;
+            height: auto ;
+            border-bottom: none !important;
+            margin: 0;
+        }
+
+        .ml-content .jumbotron .ml-item-list dl dt {
+            position: relative;
+            width: 100%;
+            height: 180px;
+            margin: 0 0 16px;
+        }
+
+        .ml-content .jumbotron .ml-item-list dl .ml-item-address {
+            position: relative;
+        }
+
+}

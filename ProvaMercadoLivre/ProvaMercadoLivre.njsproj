@@ -28,9 +28,20 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="public\scripts\default.js" />
     <Compile Include="server.js" />
     <Content Include="package.json" />
+    <Content Include="public\favicon.ico" />
+    <Content Include="public\images\logo.png" />
+    <Content Include="public\index.html" />
+    <Content Include="public\styles\default.css" />
     <Content Include="README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="public\" />
+    <Folder Include="public\images\" />
+    <Folder Include="public\scripts\" />
+    <Folder Include="public\styles\" />
   </ItemGroup>
   <!-- Do not delete the following Import Project.  While this appears to do nothing it is a marker for setting TypeScript properties before our import that depends on them. -->
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="False" />

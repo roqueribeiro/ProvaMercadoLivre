@@ -1,0 +1,9 @@
+{
+  "name": "prova-mercado-livre",
+  "version": "0.0.0",
+  "description": "ProvaMercadoLivre",
+  "main": "server.js",
+  "author": {
+    "name": "20000052"
+  }
+}
